@@ -33,7 +33,7 @@ The dataset contains images of three major rice leaf diseases:
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/SyedAejazAhmed/Rice-Leaf-Classification-Detection.git
    cd "Rice Leaf Classification & Detection"
    ```
 
