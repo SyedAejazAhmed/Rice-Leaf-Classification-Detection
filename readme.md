@@ -1,6 +1,6 @@
 # 🌾 Rice Leaf Disease Classification & Detection
 
-A deep learning project for automated classification and detection of rice leaf diseases using state-of-the-art convolutional neural networks (CNNs). This project implements multiple architectures including ResNet18 and Inception ResNet V2 to classify three major rice diseases.
+A deep learning project for automated classification and detection of rice leaf diseases using state-of-the-art convolutional neural networks (CNNs). This project implements multiple architectures including ResNet18, Inception ResNet V2, and VGG19 to classify three major rice diseases.
 
 ## 📊 Dataset Information
 
@@ -75,15 +75,15 @@ cd ResNet18
 jupyter notebook resnet18.ipynb
 ```
 
-#### Option 2: Inception ResNet V2
+#### Option 3: VGG19
 ```bash
-cd InceptionV2
-jupyter notebook inceptionv2.ipynb
+cd vgg19
+jupyter notebook vgg19.ipynb
 ```
 
 ## 🧠 Model Architectures
 
-We tested two different deep learning models to classify rice leaf diseases:
+We tested three different deep learning models to classify rice leaf diseases:
 
 ### 1. ResNet18 🏗️
 **What is ResNet18?**
@@ -98,7 +98,21 @@ ResNet18 is a convolutional neural network that's like a smart image analyzer wi
 - Achieved 50% accuracy on test images
 - Took 38 training cycles to reach best performance
 
-### 2. Inception ResNet V2 🏆
+### 2. VGG19 🔍
+**What is VGG19?**
+VGG19 is a deep convolutional neural network with 19 layers that's known for its simplicity and effectiveness. It uses small 3×3 filters throughout the network, making it excellent at capturing fine details in images. Think of it as a meticulous detective that examines every small detail.
+
+**How we used it:**
+- Started with a pre-trained VGG19 model (trained on millions of images)
+- Froze the feature extraction layers to preserve learned patterns
+- Modified the classifier to output 3 disease categories instead of 1000
+- Added dropout layers to prevent overfitting
+
+**Results:**
+- Training in progress...
+- Expected to perform well on detailed image analysis
+
+### 3. Inception ResNet V2 🏆
 **What is Inception ResNet V2?**
 This is a more advanced neural network that combines two powerful techniques: Inception (which looks at images in multiple ways simultaneously) and ResNet (which helps information flow better through the network). Think of it as a more sophisticated image detective.
 
@@ -118,6 +132,7 @@ This is a more advanced neural network that combines two powerful techniques: In
 |-------|----------|-----------|---------|----------|---------|
 | **Inception ResNet V2** | **100%** | **100%** | **100%** | **100%** | **1.0** |
 | ResNet18 | 50% | 33.3% | 50% | 40% | 0.75 |
+| VGG19 | *Training...* | *TBD* | *TBD* | *TBD* | *TBD* |
 
 ## 🛠️ Key Features
 
@@ -171,6 +186,12 @@ This is a more advanced neural network that combines two powerful techniques: In
 - **Baseline Performance**: 50% accuracy
 - **Learning Curve**: Gradual improvement over 38 epochs
 - **Overfitting Issues**: High training accuracy, lower test performance
+
+### VGG19
+- **Deep Architecture**: 19 layers for detailed feature extraction
+- **Fine Detail Analysis**: Excellent at capturing small patterns in leaf images
+- **Transfer Learning**: Leverages pre-trained ImageNet features
+- **Status**: Currently in training phase
 
 ## 🔧 Technical Notes
 - **GPU Acceleration**: Models can run faster with NVIDIA graphics cards
